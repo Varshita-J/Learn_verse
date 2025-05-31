@@ -1,0 +1,5 @@
+/* static/css/custom_admin.css */
+.custom-logo-size {
+    max-height: 40px; /* Try adjusting this */
+    width: auto;
+}
