@@ -24,7 +24,6 @@ function CourseDetail() {
     
     const country = GetCurrentAddress().country;
     const userId = UserData()?.user_id || 0;
-    //console.log(course);
 
     const fetchCourse = async () => {
         await useAxios().get(`course/course-detail/${param.slug}/`).then((res) => {
@@ -100,7 +99,9 @@ function CourseDetail() {
                                 <ul className="list-inline mb-0">
                                     <li className="list-inline-item h6 me-3 mb-1 mb-sm-0">
                                         <i className="fas fa-star text-warning me-2" />
-                                        {course.average_rating}/5.0
+                                        {typeof course.average_rating === "number"
+                                                    ? course.average_rating.toFixed(1)
+                                                    : "0.0"}/5.0
                                     </li>
                                     <li className="list-inline-item h6 me-3 mb-1 mb-sm-0">
                                         <i className="fas fa-user-graduate text-orange me-2" />
