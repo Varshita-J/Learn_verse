@@ -15,7 +15,7 @@ import Toast from "../plugin/Toast";
 import { CartContext } from "../plugin/Context";
 import apiInstance from "../../utils/axios";
 function CourseDetail() {
-    const [course, setCourse] = useState([]);
+    const [course, setCourse] = useState();
     const [isLoading, setIsLoading] = useState(true);
     const [addToCartBtn, setAddToCartBtn] = useState("Add To Cart");
     const [cartCount, setCartCount] = useContext(CartContext);
