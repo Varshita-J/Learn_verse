@@ -267,7 +267,11 @@ function Index() {
                                                     <Rater total={5} rating={c.average_rating || 0} />
                                                     </span>
                                                 </span>
-                                                <span className="text-warning">4.5</span>
+                                                <span className="text-warning">
+                                                    {typeof c.average_rating === "number"
+                                                    ? c.average_rating.toFixed(1)
+                                                    : "0.0"}
+                                                </span>
                                                 <span className="fs-6 ms-2">({c.reviews?.length} Reviews)</span>
                                             </div>
                                         </div>
