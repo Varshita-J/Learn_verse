@@ -11,6 +11,7 @@ import Login from "../src/views/auth/Login";
 import Logout from "./views/auth/Logout";
 import ForgotPassword from "./views/auth/ForgotPassword";
 import CreateNewPassword from "./views/auth/CreateNewPassword";
+import NotFound from "./views/base/NotFound";
 
 import Index from "./views/base/Index";
 import CourseDetail from "./views/base/CourseDetail";
@@ -75,6 +76,7 @@ function App() {
               <Route path="/cart/" element={<Cart />} />
               <Route path="/checkout/:order_oid/" element={<Checkout />} />
               <Route path="/search/" element={<Search />} />
+              <Route path="*" element={<NotFound />} />
 
               {/* Student Routes */}
               <Route
