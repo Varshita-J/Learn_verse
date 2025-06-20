@@ -220,7 +220,7 @@ function Index() {
                                 <h2 className="mb-1 h1">🔥Most Popular Courses</h2>
                                 <p>
                                     These are the most popular courses among Geeks Courses learners
-                                    worldwide in year 2022
+                                    worldwide in year 2025
                                 </p>
                             </div>
                         </div>
@@ -254,7 +254,7 @@ function Index() {
                                                 </a>
                                             </div>
                                             <h4 className="mb-2 text-truncate-line-2 ">
-                                                <Link to={`/course-detail/slug/`} className="text-inherit text-decoration-none text-dark fs-5">
+                                                <Link to={`/course-detail/${c.slug}/`} className="text-inherit text-decoration-none text-dark fs-5">
                                                     {c.title}
                                                 </Link>
                                             </h4>
