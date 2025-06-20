@@ -5,15 +5,9 @@ import { useAuthStore } from "../../store/auth";
 
 function BaseHeader() {
     const [cartCount, setCartCount] = useContext(CartContext);
-    const [searchQuery, setSearchQuery] = useState("");
     const navigate = useNavigate();
-
-    const handleSearchSubmit = () => {
-        navigate(`/search/?search=${searchQuery}`);
-    };
-
     const [isLoggedIn, user] = useAuthStore((state) => [state.isLoggedIn, state.user]);
-    // console.log(isLoggedIn())
+    
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
@@ -159,17 +153,14 @@ function BaseHeader() {
                                 </ul>
                             </li>
                         </ul>
-                        <form className="d-flex" role="search">
-                            <input
-                                className="form-control me-2 w-100"
-                                type="search"
-                                placeholder="Search Courses"
-                                aria-label="Search Courses"
-                            />
-                            <button className="btn btn-outline-success w-50" type="submit">
-                                Search <i className="fas fa-search"></i>
-                            </button>
-                        </form>
+                        <button
+                            className="btn btn-success px-3 d-flex align-items-center gap-2 ms-2 align-self-center"
+                            type="button"
+                            onClick={() => navigate("/search")}
+                            >
+                            <span>Search Courses</span>
+                            <i className="fas fa-search" />
+                        </button>
                         {isLoggedIn() === true ? (
                             <>
                                 <Link to="/logout/" className="btn btn-primary ms-2" type="submit">
