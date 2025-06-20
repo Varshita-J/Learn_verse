@@ -29,7 +29,6 @@ function Checkout() {
         try {
         apiInstance.get(`order/checkout/${param.order_oid}/`).then((res) => {
             setOrder(res.data);
-            //console.log(res.data);
         });
         } catch (error) {
         console.log(error);
@@ -45,20 +44,17 @@ function Checkout() {
     
         try {
         await apiInstance.post(`order/coupon/`, formdata).then((res) => {
-            console.log(res.data);
             fetchOrder();
-            // Toast().fire({
-            // icon: res.data.icon,
-            // title: res.data.message,
-            // });
+            Toast().fire({
+            icon: res.data.icon,
+            title: res.data.message,
+            });
         });
         } catch (error) {
-        if (error.response.data.includes("Coupon matching query does not exist")) {
             Toast().fire({
             icon: "error",
             title: "Coupon does not exist",
             });
-        }
         }
     };
       
